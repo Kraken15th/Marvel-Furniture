@@ -457,7 +457,7 @@
                         <div class="border-t mt-3 pt-3 space-y-1">
                             <div class="flex justify-between"><span>المنتجات:</span><span id="checkout-products-total">0
                                     جنيه</span></div>
-                            <div class="flex justify-between"><span>الشحن:</span><span id="checkout-shipping">0
+                            <div class="flex justify-between"><span>الشحن والتركيب:</span><span id="checkout-shipping">0
                                     جنيه</span></div>
                             <div class="flex justify-between font-bold text-lg text-teal-700">
                                 <span>الإجمالي:</span><span id="checkout-total">0 جنيه</span>
@@ -475,9 +475,10 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-10 mt-20">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="w-12 h-12 gradient-teal rounded-xl flex items-center justify-center mx-auto mb-4">
-                <span image="assets/logo.png" class="text-white font-bold text-xl">M</span>
-            </div>
+            <span
+                class="inline-flex w-12 h-12 gradient-teal rounded-xl items-center justify-center mx-auto mb-4 overflow-hidden">
+                <img src="assets/logo.jpeg" alt="مارفل للأثاث" class="w-full h-full object-cover">
+            </span>
             <p class="text-gray-400 mb-4">مارفل للأثاث - أثاث عصري بجودة عالية</p>
             <p class="text-gray-500 text-sm">© 2026 جميع الحقوق محفوظة</p>
         </div>
@@ -487,23 +488,23 @@
         // ===================== PRODUCTS DATA =====================
         const products = [
             // Beds
-            { id: 1, name: 'سرير مودرن', category: 'beds', size: '120x200', dimensions: '120×200×40 سم', price: 8500, hasMetalSlats: true, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.45.jpeg' },
-            { id: 2, name: 'سرير مودرن', category: 'beds', size: '140x200', dimensions: '140×200×40 سم', price: 9500, hasMetalSlats: true, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.45.jpeg' },
-            { id: 3, name: 'سرير مودرن', category: 'beds', size: '160x200', dimensions: '160×200×40 سم', price: 10500, hasMetalSlats: true, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.45.jpeg' },
-            { id: 4, name: 'سرير مودرن', category: 'beds', size: '180x200', dimensions: '180×200×40 سم', price: 11500, hasMetalSlats: true, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.45.jpeg' },
+            { id: 1, name: 'سرير مودرن 100×200', category: 'beds', size: '100x200', dimensions: '100×200×40 سم', price: 4000, hasMetalSlats: true, image: 'assets/bed100.jpeg' },
+            { id: 2, name: 'سرير مودرن 120×200', category: 'beds', size: '120x200', dimensions: '120×200×40 سم', price: 4500, hasMetalSlats: true, image: 'assets/bed120.jpeg' },
+            { id: 3, name: 'سرير مودرن 150×200', category: 'beds', size: '150x200', dimensions: '150×200×40 سم', price: 5200, hasMetalSlats: true, image: 'assets/bed150.jpeg' },
+            { id: 4, name: 'سرير مودرن 160×200', category: 'beds', size: '160x200', dimensions: '160×200×40 سم', price: 5800, hasMetalSlats: true, image: 'assets/bed160.jpeg' },
             // Mattresses
-            { id: 5, name: 'مرتبة طبية', category: 'mattresses', size: '120x200', dimensions: '120×200×25 سم', price: 4500, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.46.jpeg' },
-            { id: 6, name: 'مرتبة طبية', category: 'mattresses', size: '140x200', dimensions: '140×200×25 سم', price: 5000, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.46.jpeg' },
-            { id: 7, name: 'مرتبة طبية', category: 'mattresses', size: '160x200', dimensions: '160×200×25 سم', price: 5500, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.46.jpeg' },
-            { id: 8, name: 'مرتبة طبية', category: 'mattresses', size: '180x200', dimensions: '180×200×25 سم', price: 6000, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.46.jpeg' },
+            { id: 5, name: 'مرتبة طبية 100×200', category: 'mattresses', size: '100x200', dimensions: '100×200×26 سم', price: 2900, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.46.jpeg' },
+            { id: 6, name: 'مرتبة طبية 120×200', category: 'mattresses', size: '120x200', dimensions: '120×200×26 سم', price: 3300, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.46.jpeg' },
+            { id: 7, name: 'مرتبة طبية 150×200', category: 'mattresses', size: '150x200', dimensions: '150×200×26 سم', price: 4150, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.46.jpeg' },
+            { id: 8, name: 'مرتبة طبية 160×200', category: 'mattresses', size: '160x200', dimensions: '160×200×26 سم', price: 4600, image: 'assets/WhatsApp Image 2026-01-20 at 07.17.46.jpeg' },
             // Wardrobes
-            { id: 9, name: 'دولاب ملابس 3 درفة', category: 'wardrobes', design: 'كلاسيك', dimensions: '150×60×200 سم', price: 12000, image: 'assets/WhatsApp Image 2026-01-20 at 08.53.18.jpeg' },
-            { id: 10, name: 'دولاب ملابس 4 درفة', category: 'wardrobes', design: 'مودرن', dimensions: '200×60×200 سم', price: 15000, image: 'assets/WhatsApp Image 2026-01-20 at 08.53.18.jpeg' },
-            { id: 11, name: 'دولاب ملابس 5 درفة', category: 'wardrobes', design: 'فاخر', dimensions: '250×60×200 سم', price: 18000, image: 'assets/WhatsApp Image 2026-01-20 at 08.53.18.jpeg' },
-            { id: 12, name: 'دولاب ملابس 6 درفة', category: 'wardrobes', design: 'سوبر', dimensions: '300×60×200 سم', price: 22000, image: 'assets/WhatsApp Image 2026-01-20 at 08.53.18.jpeg' },
+            { id: 9, name: 'دولاب ملابس 3 درفة', category: 'wardrobes', design: 'كلاسيك', dimensions: '40×60×180 سم', price: 4500, image: 'assets/wardrobe3.jpeg' },
+            { id: 10, name: 'دولاب ملابس 4 درفة', category: 'wardrobes', design: 'مودرن', dimensions: '100×40×180 سم', price: 4900, image: 'assets/wardrobe5.jpeg' },
+            { id: 11, name: 'دولاب ملابس 5 درفة', category: 'wardrobes', design: 'فاخر', dimensions: '160×60×200 سم', price: 9000, image: 'assets/wardrobe2.jpeg' },
+            { id: 12, name: 'دولاب ملابس 6 درفة', category: 'wardrobes', design: 'سوبر', dimensions: '190×50×200 سم', price: 8500, image: 'assets/wardrobe4.jpeg' },
             // Bedside Tables
-            { id: 13, name: 'كومودينو', category: 'bedside', design: 'كلاسيك', dimensions: '50×40×50 سم', price: 2500, image: 'assets/WhatsApp Image 2026-01-20 at 08.53.18 (1).jpeg' },
-            { id: 14, name: 'كومودينو', category: 'bedside', design: 'مودرن', dimensions: '45×40×55 سم', price: 3000, image: 'assets/WhatsApp Image 2026-01-20 at 08.53.18 (1).jpeg' }
+            { id: 13, name: 'كومودينو', category: 'bedside', design: 'كلاسيك', dimensions: '50×40×50 سم', price: 1600, image: 'assets/bedside1.jpeg' },
+            { id: 14, name: 'كومودينو', category: 'bedside', design: 'مودرن', dimensions: '45×40×55 سم', price: 1600, image: 'assets/bedside2.jpeg' }
         ];
 
         // ===================== CART STATE =====================
