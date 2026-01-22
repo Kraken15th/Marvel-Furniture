@@ -184,6 +184,12 @@
         .animate-float {
             animation: float 3s ease-in-out infinite;
         }
+
+        @media (max-width: 768px) {
+            #cart-popup {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 
@@ -242,8 +248,11 @@
     <section id="hero" class="pt-24 md:pt-32 pb-12 md:pb-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
-                <div
-                    class="relative z-10 inline-flex flex-col md:flex-row items-center gap-4 md:gap-5 px-6 md:px-12 py-5 bg-gradient-to-r from-rose-600 via-pink-600 to-rose-600 text-white rounded-3xl md:rounded-full shadow-2xl shadow-rose-500/40 mb-10 animate-float group hover:scale-105 transition-transform duration-300 border-4 border-white/20 backdrop-blur-md max-w-[90vw] md:max-w-full mx-auto">
+                <div class="relative z-10 inline-flex flex-col md:flex-row items-center gap-4 md:gap-5 px-6 md:px-12 py-5 
+    bg-gradient-to-r from-[#026a7a] to-[#1a899c]
+    text-white rounded-3xl md:rounded-full shadow-2xl shadow-black/30 mb-10 animate-float 
+    group hover:scale-105 transition-transform duration-300 border-4 border-white/20 
+    backdrop-blur-md max-w-[90vw] md:max-w-full mx-auto">
                     <!-- Shine Effect -->
                     <div
                         class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out rounded-full">
@@ -251,11 +260,17 @@
 
                     <span class="text-3xl md:text-4xl animate-bounce filter drop-shadow-lg">⏰</span>
 
-                    <div class="flex flex-col items-center md:items-start text-center md:text-right">
-                        <span class="text-lg md:text-2xl font-black tracking-wide drop-shadow-md whitespace-nowrap">عروض
-                            السنة الجديدة</span>
-                        <p class="text-rose-100 text-xs md:text-sm font-medium">تنتهي العروض خلال</p>
+                    <div
+                        class="flex flex-col items-center md:items-start text-center md:text-right bg-[#012c33] p-4 rounded-lg">
+                        <span
+                            class="text-lg md:text-2xl font-black tracking-wide drop-shadow-md whitespace-nowrap text-white">
+                            عروض السنة الجديدة
+                        </span>
+                        <p class="text-rose-100 text-xs md:text-sm font-medium">
+                            تنتهي العروض خلال
+                        </p>
                     </div>
+
 
                     <div
                         class="flex items-center gap-2 bg-black/20 px-4 md:px-6 py-2 rounded-2xl border border-white/30 backdrop-blur-sm shadow-inner dir-ltr">
@@ -277,83 +292,146 @@
                         class="text-transparent bg-clip-text gradient-teal bg-gradient-to-r from-teal-600 to-turquoise-500">بتصميمات
                         فريدة</span>
                 </h1>
-                <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">اكتشف مجموعتنا المميزة من الأثاث العصري
-                    بأسعار لا تُقاوم</p>
+                <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">احصل على غرفة Heavy Duty
+                    كاملة بأسعار لا تُقاوم</p>
             </div>
             <!-- Offer Cards -->
             <div id="offers" class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4">
 
-                <!-- Platinum Tier Card -->
-                <div
-                    class="group relative bg-gradient-to-br from-amber-50 via-red-50 to-orange-50 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-2xl border-2 border-amber-400 ring-2 ring-amber-300/50 hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col h-full">
+                <!-- 🔷 PREMIUM OFFER CARD -->
+                <div class="group relative bg-gradient-to-br from-[#022f36] via-[#02404a] to-[#026a7a]
+        rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl border border-white/20
+        ring-1 ring-white/20 hover:-translate-y-2 transition-all duration-500
+        overflow-hidden flex flex-col h-full">
 
-                    <!-- Floating Badge -->
+                    <!-- Badge -->
                     <div class="absolute top-0 right-0 z-30">
                         <div
-                            class="bg-gradient-to-r from-amber-500 via-red-500 to-orange-500 text-white text-xs md:text-sm font-black px-4 py-1.5 rounded-bl-2xl shadow-lg flex items-center gap-1 animate-pulse">
+                            class="bg-gradient-to-r from-[#026a7a] to-[#1a899c] text-white text-xs md:text-sm font-black px-4 py-1.5 rounded-bl-2xl shadow-lg flex items-center gap-1 animate-pulse">
                             <i class="bi bi-lightning-charge-fill"></i>
                             خصم 10%
                         </div>
                     </div>
 
+                    <!-- Content -->
                     <div class="mt-4">
-                        <h3
-                            class="text-2xl md:text-3xl font-black text-amber-900 mb-2 group-hover:text-amber-600 transition-colors">
-                            عرض الغرفة الكاملة</h3>
-                        <p class="text-amber-700/80 font-medium mb-6 text-lg">سرير + مرتبة + دولاب + كومودينو</p>
+                        <h3 class="text-2xl md:text-3xl font-black text-white mb-2">
+                            عرض الغرفة الكاملة
+                        </h3>
+                        <p class="text-white/80 font-medium mb-6 text-lg">
+                            سرير + مرتبة + دولاب + كومودينو
+                        </p>
                     </div>
 
-                    <div
-                        class="h-64 rounded-2xl mb-6 overflow-hidden bg-gradient-to-b from-amber-100/50 to-white border border-amber-200/50 flex items-center justify-center relative">
-                        <div class="absolute w-48 h-48 bg-amber-200 rounded-full blur-3xl opacity-50"></div>
+                    <!-- Image -->
+                    <div class="h-64 rounded-2xl mb-6 overflow-hidden bg-black/20 border border-white/20
+            flex items-center justify-center relative">
+
+                        <div class="absolute w-48 h-48 bg-[#1a899c] rounded-full blur-3xl opacity-40"></div>
+
                         <img src="assets/offer1.jpeg" alt="عرض الغرفة الكاملة"
                             class="relative z-10 w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
                     </div>
 
-                    <button onclick="scrollToProducts()"
-                        class="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-amber-200 hover:shadow-amber-400/50 transition-all mt-auto flex items-center justify-center gap-2 group-hover:gap-3">
-                        تسوق الآن <i
-                            class="bi bi-arrow-left transition-transform duration-300 group-hover:-translate-x-1"></i>
+                    <!-- Button -->
+                    <button onclick="scrollToProducts()" class="w-full bg-gradient-to-r from-[#1a899c] to-[#026a7a]
+            hover:from-[#20a4ba] hover:to-[#026a7a] text-white py-4 rounded-xl font-bold text-lg
+            shadow-lg shadow-black/40 transition-all mt-auto flex items-center justify-center gap-2 group-hover:gap-3">
+                        تسوق الآن
+                        <i class="bi bi-arrow-left transition-transform duration-300 group-hover:-translate-x-1"></i>
                     </button>
                 </div>
 
-                <!-- Plus Tier Card -->
-                <div
-                    class="group relative bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-2xl border-2 border-purple-400 ring-2 ring-purple-300/50 hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col h-full">
+                <!-- 🔹 VITAL OFFER CARD -->
+                <div class="group relative bg-gradient-to-br from-[#026a7a] via-[#1a899c] to-[#20a4ba]
+        rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl border border-white/20
+        ring-1 ring-white/20 hover:-translate-y-2 transition-all duration-500
+        overflow-hidden flex flex-col h-full">
 
-                    <!-- Floating Badge -->
+                    <!-- Badge -->
                     <div class="absolute top-0 right-0 z-30">
                         <div
-                            class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-xs md:text-sm font-black px-4 py-1.5 rounded-bl-2xl shadow-lg flex items-center gap-1">
+                            class="bg-gradient-to-r from-[#a3d631] to-[#7fbf2a] text-black text-xs md:text-sm font-black px-4 py-1.5 rounded-bl-2xl shadow-lg flex items-center gap-1">
                             <i class="bi bi-gift-fill"></i>
                             هدية مجانية
                         </div>
                     </div>
 
+                    <!-- Content -->
                     <div class="mt-4">
-                        <h3
-                            class="text-2xl md:text-3xl font-black text-purple-900 mb-2 group-hover:text-purple-600 transition-colors">
-                            سرير + مرتبة</h3>
-                        <p class="text-purple-700/80 font-medium mb-6 text-lg">احصل على هدية مجاناً</p>
+                        <h3 class="text-2xl md:text-3xl font-black text-white mb-2">
+                            سرير + مرتبة
+                        </h3>
+                        <p class="text-white/80 font-medium mb-6 text-lg">
+                            احصل على هدية مجاناً
+                        </p>
                     </div>
 
-                    <div
-                        class="h-64 rounded-2xl mb-6 overflow-hidden bg-gradient-to-b from-purple-100/50 to-white border border-purple-200/50 flex items-center justify-center relative">
-                        <div class="absolute w-48 h-48 bg-purple-200 rounded-full blur-3xl opacity-50"></div>
+                    <!-- Image -->
+                    <div class="h-64 rounded-2xl mb-6 overflow-hidden bg-black/20 border border-white/20
+            flex items-center justify-center relative">
+
+                        <div class="absolute w-48 h-48 bg-[#a3d631] rounded-full blur-3xl opacity-30"></div>
+
                         <img src="assets/offer3.jpeg" alt="سرير + مرتبة"
                             class="relative z-10 w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
                     </div>
 
-                    <button onclick="scrollToProducts()"
-                        class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-purple-200 hover:shadow-purple-400/50 transition-all mt-auto flex items-center justify-center gap-2 group-hover:gap-3">
-                        تسوق الآن<i
-                            class="bi bi-arrow-left transition-transform duration-300 group-hover:-translate-x-1"></i>
+                    <!-- Button -->
+                    <button onclick="scrollToProducts()" class="w-full bg-gradient-to-r from-[#02404a] to-[#026a7a]
+            hover:from-[#022f36] hover:to-[#1a899c] text-white py-4 rounded-xl font-bold text-lg
+            shadow-lg shadow-black/40 transition-all mt-auto flex items-center justify-center gap-2 group-hover:gap-3">
+                        تسوق الآن
+                        <i class="bi bi-arrow-left transition-transform duration-300 group-hover:-translate-x-1"></i>
                     </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Marvel Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">
+                لماذا تختار <span class="text-teal-600">أثاث مارفل</span>؟
+            </h2>
+
+            <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6">
+
+                <!-- Card -->
+                <div
+                    class="min-w-[85%] md:min-w-[45%] lg:min-w-[30%] snap-center bg-gradient-to-br from-[#026a7a] to-[#1a899c] text-white rounded-3xl overflow-hidden shadow-xl">
+                    <img src="assets/why2.jpeg" class="h-64 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">جودة Heavy Duty</h3>
+                        <p class="text-white/80">خشب ومعدن قوي – تحمل عالي – عمر طويل</p>
+                    </div>
+                </div>
+
+                <div
+                    class="min-w-[85%] md:min-w-[45%] lg:min-w-[30%] snap-center bg-gradient-to-br from-[#02404a] to-[#026a7a] text-white rounded-3xl overflow-hidden shadow-xl">
+                    <img src="assets/why1.jpeg" class="h-64 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">تصميمات عصرية</h3>
+                        <p class="text-white/80">تصميمات تناسب كل الأذواق</p>
+                    </div>
+                </div>
+
+                <div
+                    class="min-w-[85%] md:min-w-[45%] lg:min-w-[30%] snap-center bg-gradient-to-br from-[#022f36] to-[#02404a] text-white rounded-3xl overflow-hidden shadow-xl">
+                    <img src="assets/offer2.jpeg" class="h-64 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">توصيل وتركيب سريع</h3>
+                        <p class="text-white/80">في نفس اليوم داخل القاهرة</p>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
+
 
     <!-- Products Section -->
     <section id="products" class="py-12 md:py-20 px-4">
@@ -674,6 +752,27 @@
         </div>
     </div>
 
+    <!-- latest deliveries section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">
+                آخر تسليماتنا على الطبيعة
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="assets/Deliver1.jpeg"
+                    class="rounded-2xl object-cover h-56 w-full hover:scale-105 transition-transform">
+                <img src="assets/Deliver2.jpeg"
+                    class="rounded-2xl object-cover h-56 w-full hover:scale-105 transition-transform">
+                <img src="assets/Deliver3.jpeg"
+                    class="rounded-2xl object-cover h-56 w-full hover:scale-105 transition-transform">
+                <img src="assets/Deliver4.jpeg"
+                    class="rounded-2xl object-cover h-56 w-full hover:scale-105 transition-transform">
+            </div>
+        </div>
+    </section>
+
+
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-10 mt-20">
         <div class="max-w-7xl mx-auto px-4 text-center">
@@ -820,7 +919,7 @@
                         ${p.hasMetalSlats ? `
                         <label class="flex items-center gap-2 mb-3 cursor-pointer">
                             <input type="checkbox" class="metal-slats-toggle w-4 h-4 rounded text-lime-600" data-id="${p.id}">
-                            <span class="text-sm text-gray-600">شرائح معدنية (+500 جنيه)</span>
+                            <span class="text-sm text-gray-600">ملل معدنية للمزيد من الثبات والمتانة (+500 جنيه)</span>
                         </label>` : ''}
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold text-teal-600" id="price-${p.id}">${p.price.toLocaleString('ar-EG')} جنيه</span>
