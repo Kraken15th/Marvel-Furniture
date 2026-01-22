@@ -177,13 +177,15 @@ function scrollToProducts() {
 
 // ===================== TIMER FUNCTION =====================
 function startOfferTimer() {
+    const daysEl = document.getElementById('timer-days');
+    const hoursEl = document.getElementById('timer-hours');
     const minutesEl = document.getElementById('timer-minutes');
     const secondsEl = document.getElementById('timer-seconds');
 
     if (!minutesEl || !secondsEl) return;
 
-    // Default 1 hour in ms
-    const DURATION = 60 * 60 * 1000;
+    // Default 10 days in ms
+    const DURATION = 10 * 24 * 60 * 60 * 1000;
 
     // Check for existing timer
     let endTime = localStorage.getItem('marvelOfferEndTime');
@@ -199,15 +201,19 @@ function startOfferTimer() {
         const distance = parseInt(endTime) - now;
 
         if (distance < 0) {
-            // Timer expired - Reset it for endless loop effect or stop
+            // Timer expired - Reset it for endless loop effect
             endTime = new Date().getTime() + DURATION;
             localStorage.setItem('marvelOfferEndTime', endTime);
             return;
         }
 
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+        if (daysEl) daysEl.textContent = days < 10 ? '0' + days : days;
+        if (hoursEl) hoursEl.textContent = hours < 10 ? '0' + hours : hours;
         minutesEl.textContent = minutes < 10 ? '0' + minutes : minutes;
         secondsEl.textContent = seconds < 10 ? '0' + seconds : seconds;
 
