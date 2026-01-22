@@ -8,6 +8,7 @@
     <meta name="description"
         content="اكتشف أفضل عروض الأثاث العصري في مصر. غرف نوم كاملة، سراير، مراتب، ودواليب بأسعار تنافسية مع خصومات تصل إلى 10%">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -165,21 +166,51 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
     </style>
 </head>
 
-<body class="gradient-bg min-h-screen">
+<body class="gradient-bg min-h-screen overflow-x-hidden">
     <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="navbar"
+        class="fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm md:bg-transparent md:backdrop-blur-none md:shadow-none">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 md:h-20">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-2">
-                    <div class="w-10 h-10 md:w-12 md:h-12 gradient-teal rounded-xl flex items-center justify-center">
-                        <img src="assets/logo.jpeg" alt="Logo" class="w-full h-full object-cover rounded-xl">
-                    </div>
-                    <span class="text-teal-700 font-bold text-lg md:text-xl hidden sm:block">مارفل للأثاث</span>
-                </a>
+
+                <div class="flex items-center gap-4">
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                        class="md:hidden text-teal-700 p-1 hover:bg-teal-50 rounded-lg transition-colors">
+                        <i class="bi bi-list text-3xl"></i>
+                    </button>
+
+                    <!-- Logo -->
+                    <a href="#" class="flex items-center gap-2">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 gradient-teal rounded-xl flex items-center justify-center">
+                            <img src="assets/logo.jpeg" alt="Logo" class="w-full h-full object-cover rounded-xl">
+                        </div>
+                        <span class="text-teal-700 font-bold text-lg md:text-xl hidden sm:block">مارفل للأثاث</span>
+                    </a>
+                </div>
+
                 <!-- Desktop Nav -->
                 <div class="hidden md:flex items-center gap-6">
                     <a href="#products"
@@ -191,6 +222,7 @@
                     <a href="#mattresses"
                         class="text-gray-700 hover:text-teal-600 font-semibold transition-colors">المراتب</a>
                 </div>
+
                 <!-- Cart Button -->
                 <button id="cart-btn"
                     class="relative p-3 rounded-xl bg-white/80 hover:bg-white shadow-lg transition-all hover:scale-105">
@@ -205,12 +237,41 @@
         </div>
     </nav>
 
+
     <!-- Hero Section -->
     <section id="hero" class="pt-24 md:pt-32 pb-12 md:pb-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
-                <div class="inline-block px-4 py-2 bg-lime-100 text-lime-700 rounded-full text-sm font-bold mb-4">🎉
-                    عروض السنة الجديدة</div>
+                <div
+                    class="relative z-10 inline-flex flex-col md:flex-row items-center gap-4 md:gap-5 px-6 md:px-12 py-5 bg-gradient-to-r from-rose-600 via-pink-600 to-rose-600 text-white rounded-3xl md:rounded-full shadow-2xl shadow-rose-500/40 mb-10 animate-float group hover:scale-105 transition-transform duration-300 border-4 border-white/20 backdrop-blur-md max-w-[90vw] md:max-w-full mx-auto">
+                    <!-- Shine Effect -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out rounded-full">
+                    </div>
+
+                    <span class="text-3xl md:text-4xl animate-bounce filter drop-shadow-lg">⏰</span>
+
+                    <div class="flex flex-col items-center md:items-start text-center md:text-right">
+                        <span class="text-lg md:text-2xl font-black tracking-wide drop-shadow-md whitespace-nowrap">عروض
+                            السنة الجديدة</span>
+                        <p class="text-rose-100 text-xs md:text-sm font-medium">تنتهي العروض خلال</p>
+                    </div>
+
+                    <div
+                        class="flex items-center gap-2 bg-black/20 px-4 md:px-6 py-2 rounded-2xl border border-white/30 backdrop-blur-sm shadow-inner dir-ltr">
+                        <div class="flex flex-col items-center">
+                            <span id="timer-minutes"
+                                class="font-mono text-xl md:text-4xl font-black tabular-nums leading-none">59</span>
+                            <span class="text-[8px] md:text-[10px] text-rose-200 mt-1">دقيقة</span>
+                        </div>
+                        <span class="text-xl md:text-3xl font-bold -mt-2 text-white/50">:</span>
+                        <div class="flex flex-col items-center">
+                            <span id="timer-seconds"
+                                class="font-mono text-xl md:text-4xl font-black tabular-nums leading-none">59</span>
+                            <span class="text-[8px] md:text-[10px] text-rose-200 mt-1">ثانية</span>
+                        </div>
+                    </div>
+                </div>
                 <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 mb-4 leading-tight">
                     أثاث عصري <span
                         class="text-transparent bg-clip-text gradient-teal bg-gradient-to-r from-teal-600 to-turquoise-500">بتصميمات
@@ -220,36 +281,76 @@
                     بأسعار لا تُقاوم</p>
             </div>
             <!-- Offer Cards -->
-            <div id="offers" class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-xl card-hover border-2 border-teal-100">
-                    <div class="flex items-start justify-between mb-4">
+            <div id="offers" class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4">
 
-                        <span class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-sm font-bold">خصم 10%</span>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">عرض الغرفة الكاملة</h3>
-                    <p class="text-gray-600 mb-4">سرير + مرتبة + دولاب + كومودينو</p>
-                    <div class="furniture-mockup h-32 rounded-2xl mb-4 overflow-hidden">
-                        <img src="assets/Gemini_Generated_Image_ovp39yovp39yovp3.png" alt="عرض الغرفة الكاملة"
-                            class="w-full h-full object-cover">
-                    </div>
-                    <button onclick="scrollToProducts()"
-                        class="w-full btn-primary text-white py-3 rounded-xl font-bold">تسوق الآن</button>
-                </div>
-                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-xl card-hover border-2 border-lime-100">
-                    <div class="flex items-start justify-between mb-4">
+                <!-- Platinum Tier Card -->
+                <div
+                    class="group relative bg-gradient-to-br from-amber-50 via-red-50 to-orange-50 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-2xl border-2 border-amber-400 ring-2 ring-amber-300/50 hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col h-full">
 
-                        <span class="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-bold">هدية
-                            مجانية</span>
+                    <!-- Floating Badge -->
+                    <div class="absolute top-0 right-0 z-30">
+                        <div
+                            class="bg-gradient-to-r from-amber-500 via-red-500 to-orange-500 text-white text-xs md:text-sm font-black px-4 py-1.5 rounded-bl-2xl shadow-lg flex items-center gap-1 animate-pulse">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                            خصم 10%
+                        </div>
                     </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">سرير + مرتبة</h3>
-                    <p class="text-gray-600 mb-4">احصل على هدية مجاناً</p>
-                    <div class="furniture-mockup h-32 rounded-2xl mb-4 overflow-hidden">
-                        <img src="assets/Gemini_Generated_Image2.png" alt="سرير + مرتبة"
-                            class="w-full h-full object-cover">
+
+                    <div class="mt-4">
+                        <h3
+                            class="text-2xl md:text-3xl font-black text-amber-900 mb-2 group-hover:text-amber-600 transition-colors">
+                            عرض الغرفة الكاملة</h3>
+                        <p class="text-amber-700/80 font-medium mb-6 text-lg">سرير + مرتبة + دولاب + كومودينو</p>
                     </div>
+
+                    <div
+                        class="h-64 rounded-2xl mb-6 overflow-hidden bg-gradient-to-b from-amber-100/50 to-white border border-amber-200/50 flex items-center justify-center relative">
+                        <div class="absolute w-48 h-48 bg-amber-200 rounded-full blur-3xl opacity-50"></div>
+                        <img src="assets/offer1.jpeg" alt="عرض الغرفة الكاملة"
+                            class="relative z-10 w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    </div>
+
                     <button onclick="scrollToProducts()"
-                        class="w-full btn-secondary text-white py-3 rounded-xl font-bold">شاهد العرض</button>
+                        class="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-amber-200 hover:shadow-amber-400/50 transition-all mt-auto flex items-center justify-center gap-2 group-hover:gap-3">
+                        تسوق الآن <i
+                            class="bi bi-arrow-left transition-transform duration-300 group-hover:-translate-x-1"></i>
+                    </button>
                 </div>
+
+                <!-- Plus Tier Card -->
+                <div
+                    class="group relative bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-2xl border-2 border-purple-400 ring-2 ring-purple-300/50 hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col h-full">
+
+                    <!-- Floating Badge -->
+                    <div class="absolute top-0 right-0 z-30">
+                        <div
+                            class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-xs md:text-sm font-black px-4 py-1.5 rounded-bl-2xl shadow-lg flex items-center gap-1">
+                            <i class="bi bi-gift-fill"></i>
+                            هدية مجانية
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h3
+                            class="text-2xl md:text-3xl font-black text-purple-900 mb-2 group-hover:text-purple-600 transition-colors">
+                            سرير + مرتبة</h3>
+                        <p class="text-purple-700/80 font-medium mb-6 text-lg">احصل على هدية مجاناً</p>
+                    </div>
+
+                    <div
+                        class="h-64 rounded-2xl mb-6 overflow-hidden bg-gradient-to-b from-purple-100/50 to-white border border-purple-200/50 flex items-center justify-center relative">
+                        <div class="absolute w-48 h-48 bg-purple-200 rounded-full blur-3xl opacity-50"></div>
+                        <img src="assets/offer3.jpeg" alt="سرير + مرتبة"
+                            class="relative z-10 w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    </div>
+
+                    <button onclick="scrollToProducts()"
+                        class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-purple-200 hover:shadow-purple-400/50 transition-all mt-auto flex items-center justify-center gap-2 group-hover:gap-3">
+                        تسوق الآن<i
+                            class="bi bi-arrow-left transition-transform duration-300 group-hover:-translate-x-1"></i>
+                    </button>
+                </div>
+
             </div>
         </div>
     </section>
@@ -263,44 +364,49 @@
             </div>
             <div class="flex flex-col lg:flex-row gap-8">
                 <!-- Sidebar Filter -->
-                <aside id="sidebar" class="lg:w-64 flex-shrink-0">
-                    <div class="bg-white rounded-2xl p-6 shadow-lg sticky top-24">
-                        <h3 class="font-bold text-lg text-gray-800 mb-4">الفئات</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                <aside id="sidebar" class="w-full lg:w-64 flex-shrink-0">
+                    <div class="bg-white rounded-2xl p-4 lg:p-6 shadow-lg lg:sticky lg:top-24">
+                        <h3 class="font-bold text-lg text-gray-800 mb-4 hidden lg:block">الفئات</h3>
+                        <div class="flex flex-wrap lg:flex-col gap-2 lg:gap-3">
+                            <label
+                                class="flex items-center gap-2 lg:gap-3 cursor-pointer group bg-gray-50 lg:bg-transparent px-3 py-2 lg:p-0 rounded-xl lg:rounded-none border lg:border-none border-gray-100 transition-colors hover:bg-teal-50">
                                 <input type="checkbox"
-                                    class="category-filter w-5 h-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                                    class="category-filter w-4 h-4 lg:w-5 lg:h-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
                                     value="all" checked>
                                 <span
-                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium">الكل</span>
+                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium text-sm lg:text-base">الكل</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label
+                                class="flex items-center gap-2 lg:gap-3 cursor-pointer group bg-gray-50 lg:bg-transparent px-3 py-2 lg:p-0 rounded-xl lg:rounded-none border lg:border-none border-gray-100 transition-colors hover:bg-teal-50">
                                 <input type="checkbox"
-                                    class="category-filter w-5 h-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                                    class="category-filter w-4 h-4 lg:w-5 lg:h-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
                                     value="beds">
                                 <span
-                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium">السراير</span>
+                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium text-sm lg:text-base">السراير</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label
+                                class="flex items-center gap-2 lg:gap-3 cursor-pointer group bg-gray-50 lg:bg-transparent px-3 py-2 lg:p-0 rounded-xl lg:rounded-none border lg:border-none border-gray-100 transition-colors hover:bg-teal-50">
                                 <input type="checkbox"
-                                    class="category-filter w-5 h-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                                    class="category-filter w-4 h-4 lg:w-5 lg:h-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
                                     value="mattresses">
                                 <span
-                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium">المراتب</span>
+                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium text-sm lg:text-base">المراتب</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label
+                                class="flex items-center gap-2 lg:gap-3 cursor-pointer group bg-gray-50 lg:bg-transparent px-3 py-2 lg:p-0 rounded-xl lg:rounded-none border lg:border-none border-gray-100 transition-colors hover:bg-teal-50">
                                 <input type="checkbox"
-                                    class="category-filter w-5 h-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                                    class="category-filter w-4 h-4 lg:w-5 lg:h-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
                                     value="wardrobes">
                                 <span
-                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium">الدواليب</span>
+                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium text-sm lg:text-base">الدواليب</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label
+                                class="flex items-center gap-2 lg:gap-3 cursor-pointer group bg-gray-50 lg:bg-transparent px-3 py-2 lg:p-0 rounded-xl lg:rounded-none border lg:border-none border-gray-100 transition-colors hover:bg-teal-50">
                                 <input type="checkbox"
-                                    class="category-filter w-5 h-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                                    class="category-filter w-4 h-4 lg:w-5 lg:h-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
                                     value="bedside">
                                 <span
-                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium">الكومودينو</span>
+                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium text-sm lg:text-base">الكومودينو</span>
                             </label>
                         </div>
                     </div>
@@ -315,7 +421,7 @@
 
     <!-- Cart Popup -->
     <div id="cart-popup"
-        class="fixed bottom-4 left-4 bg-white rounded-2xl shadow-2xl p-4 max-w-sm w-full z-50 hidden slide-up border border-teal-100">
+        class="fixed bottom-4 left-4 right-4 md:right-auto md:w-96 bg-white rounded-2xl shadow-2xl p-4 z-50 hidden slide-up border border-teal-100">
         <div class="flex items-center justify-between mb-3">
             <h4 class="font-bold text-gray-800">🛒 السلة</h4>
             <button onclick="closeCartPopup()" class="text-gray-400 hover:text-gray-600">✕</button>
@@ -328,144 +434,242 @@
         </div>
     </div>
 
+    <!-- Floating Mobile Cart Button -->
+    <button id="floating-cart-btn" onclick="openCartPage()"
+        class="md:hidden fixed bottom-6 right-6 z-[80] bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 hidden">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <span id="floating-cart-count"
+            class="absolute -top-2 -right-2 min-w-[28px] h-7 bg-gradient-to-r from-rose-500 to-pink-500 text-white text-xs font-black rounded-full flex items-center justify-center animate-pulse shadow-lg border-2 border-white">0</span>
+    </button>
+
     <!-- Cart Page Modal -->
-    <div id="cart-page" class="fixed inset-0 bg-black/50 z-50 hidden">
-        <div class="absolute inset-0 md:inset-4 lg:inset-10 bg-white md:rounded-3xl overflow-auto">
-            <div class="max-w-4xl mx-auto p-6 md:p-10">
-                <div class="flex items-center justify-between mb-8">
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">سلة التسوق</h2>
-                    <button onclick="closeCartPage()" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
+    <div id="cart-page" class="fixed inset-0 bg-black/50 z-[60] hidden">
+        <div class="absolute inset-0 w-full h-full bg-white overflow-y-auto">
+            <div class="min-h-full flex flex-col">
+                <!-- Sticky Header -->
+                <div class="sticky top-0 bg-white border-b border-gray-200 z-10 px-4 py-4 md:px-6">
+                    <div class="max-w-4xl mx-auto flex items-center justify-between">
+                        <h2 class="text-xl md:text-3xl font-bold text-gray-800">سلة التسوق</h2>
+                        <button onclick="closeCartPage()" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <div id="cart-items" class="space-y-4 mb-8"></div>
-                <div id="cart-empty" class="text-center py-10 hidden">
-                    <div class="text-6xl mb-4">🛒</div>
-                    <p class="text-gray-500 text-lg">السلة فارغة</p>
+
+                <!-- Scrollable Content -->
+                <div class="flex-1 px-4 py-6 md:px-6">
+                    <div class="max-w-4xl mx-auto">
+                        <div id="cart-items" class="space-y-4 mb-8"></div>
+                        <div id="cart-empty" class="text-center py-10 hidden">
+                            <div class="text-6xl mb-4">🛒</div>
+                            <p class="text-gray-500 text-lg">السلة فارغة</p>
+                        </div>
+                        <!-- Upselling Section -->
+                        <div id="upselling" class="mb-8 hidden">
+                            <h3 class="font-bold text-xl text-gray-800 mb-4">💡 قد يعجبك أيضاً</h3>
+                            <div id="upselling-grid" class="grid sm:grid-cols-2 gap-4"></div>
+                        </div>
+                        <!-- Shipping -->
+                        <div id="shipping-section" class="bg-gray-50 rounded-2xl p-4 md:p-6 mb-6">
+                            <h3 class="font-bold text-base md:text-lg mb-4">🚚 منطقة التوصيل</h3>
+                            <select id="shipping-select"
+                                class="w-full p-3 md:p-4 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all text-base">
+                                <option value="">اختر المحافظة</option>
+                                <option value="200" data-city="القاهرة">القاهرة - 200 جنيه</option>
+                                <option value="200" data-city="الجيزة">الجيزة - 200 جنيه</option>
+                                <option value="300" data-city="حلوان">حلوان - 300 جنيه</option>
+                                <option value="300" data-city="القاهرة الجديدة">القاهرة الجديدة - 300 جنيه</option>
+                                <option value="300" data-city="العاصمة الإدارية">العاصمة الإدارية - 300 جنيه</option>
+                                <option value="350" data-city="الفيوم">الفيوم - 350 جنيه</option>
+                                <option value="350" data-city="المنوفية">المنوفية - 350 جنيه</option>
+                                <option value="350" data-city="الشرقية">الشرقية - 350 جنيه</option>
+                                <option value="350" data-city="الغربية">الغربية - 350 جنيه</option>
+                                <option value="600" data-city="الاسكندرية">الاسكندرية - 600 جنيه</option>
+                                <option value="600" data-city="السويس">السويس - 600 جنيه</option>
+                                <option value="600" data-city="العين السخنة">العين السخنة - 600 جنيه</option>
+                                <option value="900" data-city="الساحل الشمالي">الساحل الشمالي - 900 جنيه</option>
+                                <option value="1500" data-city="الغردقة">الغردقة - 1500 جنيه</option>
+                                <option value="1500" data-city="مرسى مطروح">مرسى مطروح - 1500 جنيه</option>
+                            </select>
+                        </div>
+                        <!-- Totals -->
+                        <div class="bg-teal-50 rounded-2xl p-4 md:p-6 mb-6">
+                            <div class="flex justify-between mb-2 text-sm md:text-base"><span
+                                    class="text-gray-600">المنتجات</span><span id="products-total" class="font-bold">0
+                                    جنيه</span></div>
+                            <div class="flex justify-between mb-2 text-sm md:text-base"><span
+                                    class="text-gray-600">الشحن</span><span id="shipping-total" class="font-bold">0
+                                    جنيه</span></div>
+                            <div class="flex justify-between text-lg md:text-xl border-t border-teal-200 pt-3 mt-3">
+                                <span class="font-bold text-teal-700">الإجمالي</span><span id="grand-total"
+                                    class="font-bold text-teal-700">0 جنيه</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Upselling Section -->
-                <div id="upselling" class="mb-8 hidden">
-                    <h3 class="font-bold text-xl text-gray-800 mb-4">💡 قد يعجبك أيضاً</h3>
-                    <div id="upselling-grid" class="grid sm:grid-cols-2 gap-4"></div>
+
+                <!-- Sticky Footer with Checkout Button -->
+                <div class="sticky bottom-0 bg-white border-t border-gray-200 px-4 py-4 md:px-6 shadow-lg">
+                    <div class="max-w-4xl mx-auto">
+                        <button onclick="openCheckout()"
+                            class="w-full btn-primary text-white py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-xl hover:shadow-2xl transition-all">إتمام
+                            الطلب</button>
+                    </div>
                 </div>
-                <!-- Shipping -->
-                <div id="shipping-section" class="bg-gray-50 rounded-2xl p-6 mb-6">
-                    <h3 class="font-bold text-lg mb-4">🚚 منطقة التوصيل</h3>
-                    <select id="shipping-select"
-                        class="w-full p-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all">
-                        <option value="">اختر المحافظة</option>
-                        <option value="200" data-city="القاهرة">القاهرة - 200 جنيه</option>
-                        <option value="200" data-city="الجيزة">الجيزة - 200 جنيه</option>
-                        <option value="300" data-city="حلوان">حلوان - 300 جنيه</option>
-                        <option value="300" data-city="القاهرة الجديدة">القاهرة الجديدة - 300 جنيه</option>
-                        <option value="300" data-city="العاصمة الإدارية">العاصمة الإدارية - 300 جنيه</option>
-                        <option value="350" data-city="الفيوم">الفيوم - 350 جنيه</option>
-                        <option value="350" data-city="المنوفية">المنوفية - 350 جنيه</option>
-                        <option value="350" data-city="الشرقية">الشرقية - 350 جنيه</option>
-                        <option value="350" data-city="الغربية">الغربية - 350 جنيه</option>
-                        <option value="600" data-city="الاسكندرية">الاسكندرية - 600 جنيه</option>
-                        <option value="600" data-city="السويس">السويس - 600 جنيه</option>
-                        <option value="600" data-city="العين السخنة">العين السخنة - 600 جنيه</option>
-                        <option value="900" data-city="الساحل الشمالي">الساحل الشمالي - 900 جنيه</option>
-                        <option value="1500" data-city="الغردقة">الغردقة - 1500 جنيه</option>
-                        <option value="1500" data-city="مرسى مطروح">مرسى مطروح - 1500 جنيه</option>
-                    </select>
-                </div>
-                <!-- Totals -->
-                <div class="bg-teal-50 rounded-2xl p-6 mb-6">
-                    <div class="flex justify-between mb-2"><span class="text-gray-600">المنتجات</span><span
-                            id="products-total" class="font-bold">0 جنيه</span></div>
-                    <div class="flex justify-between mb-2"><span class="text-gray-600">الشحن</span><span
-                            id="shipping-total" class="font-bold">0 جنيه</span></div>
-                    <div class="flex justify-between text-xl border-t border-teal-200 pt-3 mt-3"><span
-                            class="font-bold text-teal-700">الإجمالي</span><span id="grand-total"
-                            class="font-bold text-teal-700">0 جنيه</span></div>
-                </div>
-                <button onclick="openCheckout()"
-                    class="w-full btn-primary text-white py-4 rounded-xl font-bold text-lg">إتمام الطلب</button>
             </div>
         </div>
     </div>
 
     <!-- Checkout Modal -->
-    <div id="checkout-page" class="fixed inset-0 bg-black/50 z-50 hidden">
-        <div class="absolute inset-0 md:inset-4 lg:inset-10 bg-white md:rounded-3xl overflow-auto">
-            <div class="max-w-2xl mx-auto p-6 md:p-10">
-                <div class="flex items-center justify-between mb-8">
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">إتمام الطلب</h2>
-                    <button onclick="closeCheckout()" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
+    <div id="checkout-page" class="fixed inset-0 bg-black/50 z-[70] hidden">
+        <div class="absolute inset-0 w-full h-full bg-white overflow-y-auto">
+            <div class="min-h-full flex flex-col">
+                <!-- Sticky Header -->
+                <div class="sticky top-0 bg-white border-b border-gray-200 z-10 px-4 py-4 md:px-6">
+                    <div class="max-w-2xl mx-auto flex items-center justify-between">
+                        <h2 class="text-xl md:text-3xl font-bold text-gray-800">إتمام الطلب</h2>
+                        <button onclick="closeCheckout()" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <form id="checkout-form" class="space-y-4">
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-2">الاسم الكامل *</label>
-                        <input type="text" id="fullName" required
-                            class="w-full p-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-2">رقم الهاتف الأساسي *</label>
-                        <input type="tel" id="primaryPhone" required
-                            class="w-full p-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
-                            dir="ltr">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-2">رقم هاتف ثانوي (اختياري)</label>
-                        <input type="tel" id="secondaryPhone"
-                            class="w-full p-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
-                            dir="ltr">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-2">المحافظة *</label>
-                        <select id="city" required
-                            class="w-full p-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200">
-                            <option value="">اختر المحافظة</option>
-                            <option value="القاهرة">القاهرة</option>
-                            <option value="الجيزة">الجيزة</option>
-                            <option value="حلوان">حلوان</option>
-                            <option value="القاهرة الجديدة">القاهرة الجديدة</option>
-                            <option value="العاصمة الإدارية">العاصمة الإدارية</option>
-                            <option value="الفيوم">الفيوم</option>
-                            <option value="المنوفية">المنوفية</option>
-                            <option value="الشرقية">الشرقية</option>
-                            <option value="الغربية">الغربية</option>
-                            <option value="الاسكندرية">الاسكندرية</option>
-                            <option value="السويس">السويس</option>
-                            <option value="العين السخنة">العين السخنة</option>
-                            <option value="الساحل الشمالي">الساحل الشمالي</option>
-                            <option value="الغردقة">الغردقة</option>
-                            <option value="مرسى مطروح">مرسى مطروح</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-2">العنوان التفصيلي *</label>
-                        <textarea id="fullAddress" required rows="3"
-                            class="w-full p-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200"></textarea>
-                    </div>
-                    <!-- Order Summary -->
-                    <div class="bg-gray-50 rounded-2xl p-4 mt-6">
-                        <h4 class="font-bold mb-3">ملخص الطلب</h4>
-                        <div id="checkout-items" class="space-y-2 text-sm"></div>
-                        <div class="border-t mt-3 pt-3 space-y-1">
-                            <div class="flex justify-between"><span>المنتجات:</span><span id="checkout-products-total">0
-                                    جنيه</span></div>
-                            <div class="flex justify-between"><span>الشحن والتركيب:</span><span id="checkout-shipping">0
-                                    جنيه</span></div>
-                            <div class="flex justify-between font-bold text-lg text-teal-700">
-                                <span>الإجمالي:</span><span id="checkout-total">0 جنيه</span>
+
+                <!-- Scrollable Form Content -->
+                <div class="flex-1 px-4 py-6 md:px-6">
+                    <div class="max-w-2xl mx-auto">
+                        <form id="checkout-form" class="space-y-5">
+                            <!-- Customer Information Section -->
+                            <div
+                                class="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-4 md:p-6 border border-teal-100">
+                                <h3 class="font-bold text-base md:text-lg text-teal-800 mb-4 flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    بيانات العميل
+                                </h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-gray-700 font-medium mb-2 text-sm md:text-base">الاسم
+                                            الكامل *</label>
+                                        <input type="text" id="fullName" required
+                                            class="w-full p-3 md:p-4 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all text-base"
+                                            placeholder="أدخل اسمك الكامل">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 font-medium mb-2 text-sm md:text-base">رقم
+                                            الهاتف الأساسي *</label>
+                                        <input type="tel" id="primaryPhone" required
+                                            class="w-full p-3 md:p-4 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all text-base"
+                                            dir="ltr" placeholder="01XXXXXXXXX">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 font-medium mb-2 text-sm md:text-base">رقم
+                                            هاتف ثانوي (اختياري)</label>
+                                        <input type="tel" id="secondaryPhone"
+                                            class="w-full p-3 md:p-4 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all text-base"
+                                            dir="ltr" placeholder="01XXXXXXXXX">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+
+                            <!-- Delivery Information Section -->
+                            <div
+                                class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-4 md:p-6 border border-orange-100">
+                                <h3 class="font-bold text-base md:text-lg text-orange-800 mb-4 flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                    بيانات التوصيل
+                                </h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label
+                                            class="block text-gray-700 font-medium mb-2 text-sm md:text-base">المحافظة
+                                            *</label>
+                                        <select id="city" required
+                                            class="w-full p-3 md:p-4 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all text-base">
+                                            <option value="">اختر المحافظة</option>
+                                            <option value="القاهرة">القاهرة</option>
+                                            <option value="الجيزة">الجيزة</option>
+                                            <option value="حلوان">حلوان</option>
+                                            <option value="القاهرة الجديدة">القاهرة الجديدة</option>
+                                            <option value="العاصمة الإدارية">العاصمة الإدارية</option>
+                                            <option value="الفيوم">الفيوم</option>
+                                            <option value="المنوفية">المنوفية</option>
+                                            <option value="الشرقية">الشرقية</option>
+                                            <option value="الغربية">الغربية</option>
+                                            <option value="الاسكندرية">الاسكندرية</option>
+                                            <option value="السويس">السويس</option>
+                                            <option value="العين السخنة">العين السخنة</option>
+                                            <option value="الساحل الشمالي">الساحل الشمالي</option>
+                                            <option value="الغردقة">الغردقة</option>
+                                            <option value="مرسى مطروح">مرسى مطروح</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 font-medium mb-2 text-sm md:text-base">العنوان
+                                            التفصيلي *</label>
+                                        <textarea id="fullAddress" required rows="3"
+                                            class="w-full p-3 md:p-4 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all text-base resize-none"
+                                            placeholder="الشارع، رقم البناية، الدور، الشقة..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Order Summary Section -->
+                            <div
+                                class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-4 md:p-6 border border-purple-100">
+                                <h3 class="font-bold text-base md:text-lg text-purple-800 mb-4 flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                    </svg>
+                                    ملخص الطلب
+                                </h3>
+                                <div id="checkout-items" class="space-y-2 text-sm mb-4"></div>
+                                <div class="border-t border-purple-200 pt-4 space-y-2">
+                                    <div class="flex justify-between text-sm md:text-base"><span
+                                            class="text-gray-700">المنتجات:</span><span id="checkout-products-total"
+                                            class="font-bold">0 جنيه</span></div>
+                                    <div class="flex justify-between text-sm md:text-base"><span
+                                            class="text-gray-700">الشحن والتركيب:</span><span id="checkout-shipping"
+                                            class="font-bold">0 جنيه</span></div>
+                                    <div
+                                        class="flex justify-between text-lg md:text-xl font-bold text-purple-700 pt-2 border-t border-purple-200">
+                                        <span>الإجمالي:</span><span id="checkout-total">0 جنيه</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <button type="submit"
-                        class="w-full btn-primary text-white py-4 rounded-xl font-bold text-lg mt-6">تأكيد الطلب عبر
-                        واتساب</button>
-                </form>
+                </div>
+
+                <!-- Sticky Footer with Submit Button -->
+                <div class="sticky bottom-0 bg-white border-t border-gray-200 px-4 py-4 md:px-6 shadow-lg">
+                    <div class="max-w-2xl mx-auto">
+                        <button type="submit" form="checkout-form"
+                            class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                            تأكيد الطلب عبر واتساب
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -481,6 +685,32 @@
             <p class="text-gray-500 text-sm">© 2026 جميع الحقوق محفوظة</p>
         </div>
     </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[9999]"
+        style="display: none; width: 100vw; height: 100vh; position: fixed; top: 0; left: 0;">
+        <div class="flex flex-col justify-center items-center h-full w-full gap-8 relative">
+            <button id="close-mobile-menu"
+                class="absolute top-8 right-8 text-gray-700 hover:text-red-500 p-3 transition-colors z-[10000] bg-gray-100 rounded-full">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="w-24 h-24 gradient-teal rounded-3xl flex items-center justify-center mb-6 shadow-2xl">
+                <img src="assets/logo.jpeg" alt="Logo" class="w-full h-full object-cover rounded-3xl">
+            </div>
+            <nav class="flex flex-col items-center gap-8">
+                <a href="#products"
+                    class="mobile-link text-3xl font-black text-gray-800 hover:text-teal-600 transition-colors">المنتجات</a>
+                <a href="#offers"
+                    class="mobile-link text-3xl font-black text-gray-800 hover:text-teal-600 transition-colors">العروض</a>
+                <a href="#beds"
+                    class="mobile-link text-3xl font-black text-gray-800 hover:text-teal-600 transition-colors">السراير</a>
+                <a href="#mattresses"
+                    class="mobile-link text-3xl font-black text-gray-800 hover:text-teal-600 transition-colors">المراتب</a>
+            </nav>
+        </div>
+    </div>
 
     <script>
         // ===================== PRODUCTS DATA =====================
@@ -530,15 +760,42 @@
             updateCartUI();
             setupFilters();
             setupNavbarScroll();
+            startOfferTimer();
+            setupMobileMenu();
         });
+
+        // ===================== MOBILE MENU =====================
+        function setupMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMobileMenu = document.getElementById('close-mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                const isHidden = mobileMenu.style.display === 'none' || mobileMenu.style.display === '';
+                if (isHidden) {
+                    mobileMenu.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    mobileMenu.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            }
+
+            mobileMenuBtn?.addEventListener('click', toggleMenu);
+            closeMobileMenu?.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+        }
 
         // ===================== NAVBAR SCROLL =====================
         function setupNavbarScroll() {
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
                     navbar.classList.add('glass', 'shadow-lg');
+                    navbar.classList.remove('bg-white/90', 'md:bg-transparent'); // Clean up base classes on scroll
                 } else {
                     navbar.classList.remove('glass', 'shadow-lg');
+                    navbar.classList.add('bg-white/90', 'md:bg-transparent'); // Restore base classes
                 }
             });
         }
@@ -659,6 +916,18 @@
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
             cartCount.textContent = totalItems;
             cartCount.classList.toggle('hidden', totalItems === 0);
+
+            // Update floating mobile cart button
+            const floatingCartBtn = document.getElementById('floating-cart-btn');
+            const floatingCartCount = document.getElementById('floating-cart-count');
+            if (floatingCartBtn && floatingCartCount) {
+                floatingCartCount.textContent = totalItems;
+                if (totalItems > 0) {
+                    floatingCartBtn.classList.remove('hidden');
+                } else {
+                    floatingCartBtn.classList.add('hidden');
+                }
+            }
 
             const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
             cartPopupTotal.textContent = total.toLocaleString('ar-EG');
@@ -793,6 +1062,47 @@
 
             renderCheckoutSummary();
         }
+
+        // ===================== TIMER FUNCTION =====================
+        function startOfferTimer() {
+            const minutesEl = document.getElementById('timer-minutes');
+            const secondsEl = document.getElementById('timer-seconds');
+
+            // Default 1 hour in ms
+            const DURATION = 60 * 60 * 1000;
+
+            // Check for existing timer
+            let endTime = localStorage.getItem('marvelOfferEndTime');
+
+            if (!endTime || new Date().getTime() > parseInt(endTime)) {
+                // Determine new end time
+                endTime = new Date().getTime() + DURATION;
+                localStorage.setItem('marvelOfferEndTime', endTime);
+            }
+
+            function update() {
+                const now = new Date().getTime();
+                const distance = parseInt(endTime) - now;
+
+                if (distance < 0) {
+                    // Timer expired - Reset it for endless loop effect or stop
+                    endTime = new Date().getTime() + DURATION;
+                    localStorage.setItem('marvelOfferEndTime', endTime);
+                    return;
+                }
+
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                minutesEl.textContent = minutes < 10 ? '0' + minutes : minutes;
+                secondsEl.textContent = seconds < 10 ? '0' + seconds : seconds;
+
+                requestAnimationFrame(update);
+            }
+
+            update();
+        }
+
 
         function closeCheckout() {
             checkoutPage.classList.add('hidden');
