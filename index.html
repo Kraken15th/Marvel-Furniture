@@ -292,8 +292,8 @@
                         class="text-transparent bg-clip-text gradient-teal bg-gradient-to-r from-teal-600 to-turquoise-500">بتصميمات
                         فريدة</span>
                 </h1>
-                <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">احصل على غرفة Heavy Duty
-                    كاملة بأسعار لا تُقاوم</p>
+                <p class="text-gray-800 font-bold text-2xl md:text-4xl max-w-3xl mx-auto">احصل على غرفة Heavy Duty
+                    كاملة بأسعار لا تُقاوم !</p>
             </div>
             <!-- Offer Cards -->
             <div id="offers" class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4">
@@ -319,7 +319,7 @@
                             عرض الغرفة الكاملة
                         </h3>
                         <p class="text-white/80 font-medium mb-6 text-lg">
-                            سرير + مرتبة + دولاب + كومودينو
+                            سرير + مرتبة + دولاب + كومود
                         </p>
                     </div>
 
@@ -415,7 +415,7 @@
                     <img src="assets/why1.jpeg" class="h-64 w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">تصميمات عصرية</h3>
-                        <p class="text-white/80">تصميمات تناسب كل الأذواق</p>
+                        <p class="text-white/80">اشتري ووفر مع Marvel Steel… منتج يعيش معاك</p>
                     </div>
                 </div>
 
@@ -484,7 +484,7 @@
                                     class="category-filter w-4 h-4 lg:w-5 lg:h-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
                                     value="bedside">
                                 <span
-                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium text-sm lg:text-base">الكومودينو</span>
+                                    class="text-gray-700 group-hover:text-teal-600 transition-colors font-medium text-sm lg:text-base">الكومود</span>
                             </label>
                         </div>
                     </div>
@@ -815,23 +815,23 @@
         // ===================== PRODUCTS DATA =====================
         const products = [
             // Beds
-            { id: 1, name: 'سرير مودرن 100', category: 'beds', size: '100x200', dimensions: '100×200', price: 4000, hasMetalSlats: true, image: 'assets/bed100.jpeg' },
-            { id: 2, name: 'سرير مودرن 120', category: 'beds', size: '120x200', dimensions: '120×200', price: 4500, hasMetalSlats: true, image: 'assets/bed120.jpeg' },
-            { id: 3, name: 'سرير مودرن 150', category: 'beds', size: '150x200', dimensions: '150×200', price: 5200, hasMetalSlats: true, image: 'assets/bed150.jpeg' },
-            { id: 4, name: 'سرير مودرن 160', category: 'beds', size: '160x200', dimensions: '160×200', price: 5800, hasMetalSlats: true, image: 'assets/bed160.jpeg' },
+            { id: 1, name: 'سرير معدني مودرن 100 سم', category: 'beds', size: '100x200', dimensions: '100×200', price: 4000, hasMetalSlats: true, image: 'assets/bed100.jpeg' },
+            { id: 2, name: 'سرير معدني مودرن 120 سم', category: 'beds', size: '120x200', dimensions: '120×200', price: 4500, hasMetalSlats: true, image: 'assets/bed120.jpeg' },
+            { id: 3, name: 'سرير معدني مودرن 150 سم', category: 'beds', size: '150x200', dimensions: '150×200', price: 5200, hasMetalSlats: true, image: 'assets/bed150.jpeg' },
+            { id: 4, name: 'سرير معدني مودرن 160 سم', category: 'beds', size: '160x200', dimensions: '160×200', price: 5800, hasMetalSlats: true, image: 'assets/bed160.jpeg' },
             // Mattresses
-            { id: 5, name: 'مرتبة طبية 100', category: 'mattresses', size: '100x200', dimensions: '100×200×26 سم', price: 2900, image: 'assets/mattress2.jpeg' },
+            { id: 5, name: 'مرتبة طبية 100 ', category: 'mattresses', size: '100x200', dimensions: '100×200×26 سم', price: 2900, image: 'assets/mattress2.jpeg' },
             { id: 6, name: 'مرتبة طبية 120', category: 'mattresses', size: '120x200', dimensions: '120×200×26 سم', price: 3300, image: 'assets/mattress2.jpeg' },
             { id: 7, name: 'مرتبة طبية 150', category: 'mattresses', size: '150x200', dimensions: '150×200×26 سم', price: 4150, image: 'assets/mattress2.jpeg' },
             { id: 8, name: 'مرتبة طبية 160', category: 'mattresses', size: '160x200', dimensions: '160×200×26 سم', price: 4600, image: 'assets/mattress2.jpeg' },
             // Wardrobes
-            { id: 9, name: 'دولاب ملابس 3 درفة', category: 'wardrobes', design: 'كلاسيك', dimensions: '40×60×180 سم', price: 4500, image: 'assets/wardrobe3.jpeg' },
+            { id: 9, name: 'دولاب خشب بإطار معدني', category: 'wardrobes', design: 'كلاسيك', dimensions: '40×60×180 سم', price: 4500, image: 'assets/wardrobe3.jpeg' },
             { id: 10, name: 'دولاب ملابس 4 درفة', category: 'wardrobes', design: 'مودرن', dimensions: '100×40×180 سم', price: 4900, image: 'assets/wardrobe5.jpeg' },
-            { id: 11, name: 'دولاب ملابس 5 درفة', category: 'wardrobes', design: 'فاخر', dimensions: '160×60×200 سم', price: 9000, image: 'assets/wardrobe2.jpeg' },
-            { id: 12, name: 'دولاب ملابس 6 درفة', category: 'wardrobes', design: 'سوبر', dimensions: '190×50×200 سم', price: 8500, image: 'assets/wardrobe4.jpeg' },
+            { id: 11, name: 'دولاب 3 ضلفة بخزانات', category: 'wardrobes', design: 'فاخر', dimensions: '160×60×200 سم', price: 9000, image: 'assets/wardrobe2.jpeg' },
+            { id: 12, name: 'دريسينج متعدد الارفف', category: 'wardrobes', design: 'سوبر', dimensions: '190×50×200 سم', price: 8500, image: 'assets/wardrobe4.jpeg' },
             // Bedside Tables
-            { id: 13, name: 'كومودينو', category: 'bedside', design: 'كلاسيك', dimensions: '50×40×50 سم', price: 1600, image: 'assets/bedside1.jpeg' },
-            { id: 14, name: 'كومودينو', category: 'bedside', design: 'مودرن', dimensions: '45×40×55 سم', price: 1600, image: 'assets/bedside2.jpeg' }
+            { id: 13, name: 'كومود', category: 'bedside', design: 'كلاسيك', dimensions: '50×40×50 سم', price: 1600, image: 'assets/bedside1.jpeg' },
+            { id: 14, name: 'كومود', category: 'bedside', design: 'مودرن', dimensions: '45×40×55 سم', price: 1600, image: 'assets/bedside2.jpeg' }
         ];
 
         // ===================== CART STATE =====================
@@ -919,7 +919,7 @@
                         ${p.hasMetalSlats ? `
                         <label class="flex items-center gap-2 mb-3 cursor-pointer">
                             <input type="checkbox" class="metal-slats-toggle w-4 h-4 rounded text-lime-600" data-id="${p.id}">
-                            <span class="text-sm text-gray-600">ملل معدنية للمزيد من الثبات والمتانة (+500 جنيه)</span>
+                            <span class="text-sm text-gray-600">ملل معدنية لزيادة الثبات والمتانة (+500 جنيه)</span>
                         </label>` : ''}
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold text-teal-600" id="price-${p.id}">${p.price.toLocaleString('ar-EG')} جنيه</span>
@@ -944,7 +944,7 @@
         }
 
         function getCategoryIcon(category) {
-            const icons = { beds: '🛏️', mattresses: '🛋️', wardrobes: '🚪', bedside: '🪑' };
+            const icons = { beds: '', mattresses: '', wardrobes: '', bedside: '' };
             return icons[category] || '📦';
         }
 
