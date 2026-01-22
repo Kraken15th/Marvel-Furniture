@@ -12,7 +12,7 @@ const products = [
     { id: 8, name: 'مرتبة طبية 160', category: 'mattresses', size: '160x200', dimensions: '160×200×26 سم', price: 4600, image: 'assets/mattress2.jpeg' },
     // Wardrobes
     { id: 9, name: 'دولاب خشب بإطار معدني', category: 'wardrobes', design: 'كلاسيك', dimensions: '40×60×180 سم', price: 4500, image: 'assets/wardrobe3.jpeg' },
-    { id: 10, name: 'دولاب ملابس 4 درفة', category: 'wardrobes', design: 'مودرن', dimensions: '100×40×180 سم', price: 4900, image: 'assets/wardrobe5.jpeg' },
+    { id: 10, name: 'دولاب ملابس خزانه وارفف', category: 'wardrobes', design: 'مودرن', dimensions: '100×40×180 سم', price: 4900, image: 'assets/wardrobe5.jpeg' },
     { id: 11, name: 'دولاب 3 ضلفة بخزانات', category: 'wardrobes', design: 'فاخر', dimensions: '160×60×200 سم', price: 9000, image: 'assets/wardrobe2.jpeg' },
     { id: 12, name: 'دريسينج متعدد الارفف', category: 'wardrobes', design: 'سوبر', dimensions: '190×50×200 سم', price: 8500, image: 'assets/wardrobe4.jpeg' },
     // Bedside Tables
@@ -441,7 +441,7 @@ function handleCheckoutSubmit(e) {
     const selectedCategories = [...new Set(cart.map(item => item.name + ' ' + (item.size || item.design)))];
 
     // UI Loading State
-    const submitBtn = document.querySelector('#checkout-form button[type="submit"]');
+    const submitBtn = document.querySelector('button[type="submit"][form="checkout-form"]') || document.querySelector('#checkout-form button[type="submit"]');
     const originalBtnContent = submitBtn.innerHTML;
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="animate-spin inline-block ml-2">↻</span> جاري التحويل...';
