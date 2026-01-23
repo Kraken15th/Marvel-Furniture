@@ -6,10 +6,10 @@ const products = [
     { id: 3, name: 'سرير معدني مودرن 150 سم', category: 'beds', size: '150x200', dimensions: '150×200', price: 5200, hasMetalSlats: true, image: 'assets/bed150.jpeg' },
     { id: 4, name: 'سرير معدني مودرن 160 سم', category: 'beds', size: '160x200', dimensions: '160×200', price: 5800, hasMetalSlats: true, image: 'assets/bed160.jpeg' },
     // Mattresses
-    { id: 5, name: 'مرتبة طبية 100 ', category: 'mattresses', size: '100x200', dimensions: '100×200×26 سم', price: 2900, image: 'assets/mattress2.jpeg' },
-    { id: 6, name: 'مرتبة طبية 120', category: 'mattresses', size: '120x200', dimensions: '120×200×26 سم', price: 3300, image: 'assets/mattress2.jpeg' },
-    { id: 7, name: 'مرتبة طبية 150', category: 'mattresses', size: '150x200', dimensions: '150×200×26 سم', price: 4150, image: 'assets/mattress2.jpeg' },
-    { id: 8, name: 'مرتبة طبية 160', category: 'mattresses', size: '160x200', dimensions: '160×200×26 سم', price: 4600, image: 'assets/mattress2.jpeg' },
+    { id: 5, name: 'مرتبة سوست 100 سم', category: 'mattresses', size: '100x200', dimensions: '100×200×26 سم', price: 2900, image: 'assets/mattress2.jpeg' },
+    { id: 6, name: 'مرتبة سوست 120 سم', category: 'mattresses', size: '120x200', dimensions: '120×200×26 سم', price: 3300, image: 'assets/mattress2.jpeg' },
+    { id: 7, name: 'مرتبة سوست 150 سم', category: 'mattresses', size: '150x200', dimensions: '150×200×26 سم', price: 4150, image: 'assets/mattress2.jpeg' },
+    { id: 8, name: 'مرتبة سوست 160 سم', category: 'mattresses', size: '160x200', dimensions: '160×200×26 سم', price: 4600, image: 'assets/mattress2.jpeg' },
     // Wardrobes
     { id: 9, name: 'دولاب خشب بإطار معدني', category: 'wardrobes', design: 'كلاسيك', dimensions: '40×60×180 سم', price: 4500, image: 'assets/wardrobe3.jpeg' },
     { id: 10, name: 'دولاب ملابس خزانه وارفف', category: 'wardrobes', design: 'مودرن', dimensions: '100×40×180 سم', price: 4900, image: 'assets/wardrobe5.jpeg' },
