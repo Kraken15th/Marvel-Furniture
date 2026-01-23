@@ -16,8 +16,8 @@ const products = [
     { id: 11, name: 'دولاب 3 ضلفة بخزانات', category: 'wardrobes', design: 'فاخر', dimensions: '160×60×200 سم', price: 9000, image: 'assets/wardrobe2.jpeg' },
     { id: 12, name: 'دريسينج متعدد الارفف', category: 'wardrobes', design: 'سوبر', dimensions: '190×50×200 سم', price: 8500, image: 'assets/wardrobe4.jpeg' },
     // Bedside Tables
-    { id: 13, name: 'كومود', category: 'bedside', design: 'كلاسيك', dimensions: '50×40×50 سم', price: 1600, image: 'assets/bedside1.jpeg' },
-    { id: 14, name: 'كومود', category: 'bedside', design: 'مودرن', dimensions: '45×40×55 سم', price: 1600, image: 'assets/bedside2.jpeg' }
+    { id: 13, name: 'كومود Z', category: 'bedside', design: 'كلاسيك', dimensions: '50×40×50 سم', price: 1600, image: 'assets/bedside1.jpeg' },
+    { id: 14, name: 'كومود 2 رف', category: 'bedside', design: 'مودرن', dimensions: '45×40×55 سم', price: 1600, image: 'assets/bedside2.jpeg' }
 ];
 
 // ===================== CART STATE =====================
@@ -549,6 +549,7 @@ function renderProducts(filter = 'all') {
                 </div>
                 <p class="text-gray-500 text-sm mb-3">${p.dimensions}</p>
                 ${p.hasMetalSlats ? `
+                    <span class="text-sm text-gray-600">(بدون مرتبة)</span>
                 <label class="flex items-center gap-2 mb-3 cursor-pointer">
                     <input type="checkbox" class="metal-slats-toggle w-4 h-4 rounded text-lime-600" data-id="${p.id}">
                     <span class="text-sm text-gray-600">ملل معدنية لزيادة الثبات والمتانة (+500 جنيه)</span>
