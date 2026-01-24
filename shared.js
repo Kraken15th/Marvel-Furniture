@@ -599,6 +599,11 @@ function setupFilters() {
 }
 
 function initIndexPage() {
+    // Reset horizontal scroll to prevent shifted view on page load
+    window.scrollTo(0, 0);
+    document.documentElement.scrollLeft = 0;
+    document.body.scrollLeft = 0;
+
     renderProducts();
     updateCartUI();
     setupFilters();
