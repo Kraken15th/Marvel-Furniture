@@ -2,27 +2,90 @@
 const products = [
     // Beds
     { id: 1, name: 'سرير معدني مودرن 100 سم', category: 'beds', size: '100x200', dimensions: '100×200', price: 4000, hasMetalSlats: true, image: 'assets/bed100.jpeg' },
-    { id: 2, name: 'سرير معدني مودرن 120 سم', category: 'beds', size: '120x200', dimensions: '120×200', price: 4500, hasMetalSlats: true, image: 'assets/bed120.jpeg' },
-    { id: 3, name: 'سرير معدني مودرن 150 سم', category: 'beds', size: '150x200', dimensions: '150×200', price: 5200, hasMetalSlats: true, image: 'assets/bed150.jpeg' },
-    { id: 4, name: 'سرير معدني مودرن 160 سم', category: 'beds', size: '160x200', dimensions: '160×200', price: 5800, hasMetalSlats: true, image: 'assets/bed160.jpeg' },
+    { id: 2, name: 'سرير معدني مودرن 100 سم', category: 'beds', size: '100x200', dimensions: '100×200', price: 4250, hasMetalSlats: true, image: 'assets/bed1002.jpeg' },
+    { id: 3, name: 'سرير معدني مودرن 100 سم', category: 'beds', size: '100x200', dimensions: '100×200', price: 4250, hasMetalSlats: true, image: 'assets/bed1003.jpeg' },
+    { id: 4, name: 'سرير معدني مودرن 120 سم', category: 'beds', size: '120x200', dimensions: '120×200', price: 4500, hasMetalSlats: true, image: 'assets/bed120.jpeg' },
+    { id: 5, name: 'سرير معدني مودرن 120 سم', category: 'beds', size: '120x200', dimensions: '120×200', price: 4500, hasMetalSlats: true, image: 'assets/bed1202.jpeg' },
+    { id: 6, name: 'سرير معدني مودرن 120 سم', category: 'beds', size: '120x200', dimensions: '120×200', price: 4500, hasMetalSlats: true, image: 'assets/bed1203.jpeg' },
+    { id: 7, name: 'سرير معدني مودرن 150 سم', category: 'beds', size: '150x200', dimensions: '150×200', price: 5200, hasMetalSlats: true, image: 'assets/bed150.jpeg' },
+    { id: 8, name: 'سرير معدني مودرن 150 سم', category: 'beds', size: '150x200', dimensions: '150×200', price: 5200, hasMetalSlats: true, image: 'assets/bed1502.jpeg' },
+    { id: 9, name: 'سرير معدني مودرن 150 سم', category: 'beds', size: '150x200', dimensions: '150×200', price: 5200, hasMetalSlats: true, image: 'assets/bed1503.jpeg' },
+    { id: 10, name: 'سرير معدني مودرن 150 سم', category: 'beds', size: '150x200', dimensions: '150×200', price: 5200, hasMetalSlats: true, image: 'assets/bed1504.jpeg' },
+    { id: 11, name: 'سرير معدني مودرن 160 سم', category: 'beds', size: '160x200', dimensions: '160×200', price: 5800, hasMetalSlats: true, image: 'assets/bed160.jpeg' },
+    { id: 12, name: 'سرير معدني مودرن 160 سم', category: 'beds', size: '160x200', dimensions: '160×200', price: 5800, hasMetalSlats: true, image: 'assets/bed1602.jpeg' },
+    { id: 13, name: 'سرير معدني مودرن 160 سم', category: 'beds', size: '160x200', dimensions: '160×200', price: 5800, hasMetalSlats: true, image: 'assets/bed1603.jpeg' },
+    { id: 14, name: 'سرير معدني مودرن 180 سم', category: 'beds', size: '180x200', dimensions: '180×200', price: 6400, hasMetalSlats: true, image: 'assets/bed180.jpeg' },
+    { id: 16, name: 'سرير معدني مودرن 180 سم', category: 'beds', size: '180x200', dimensions: '180×200', price: 6400, hasMetalSlats: true, image: 'assets/bed1803.jpeg' },
     // Mattresses
-    { id: 5, name: 'مرتبة سوست 100 سم', category: 'mattresses', size: '100x200', dimensions: '100×200×26 سم', price: 2900, image: 'assets/mattress2.jpeg' },
-    { id: 6, name: 'مرتبة سوست 120 سم', category: 'mattresses', size: '120x200', dimensions: '120×200×26 سم', price: 3300, image: 'assets/mattress2.jpeg' },
-    { id: 7, name: 'مرتبة سوست 150 سم', category: 'mattresses', size: '150x200', dimensions: '150×200×26 سم', price: 4150, image: 'assets/mattress2.jpeg' },
-    { id: 8, name: 'مرتبة سوست 160 سم', category: 'mattresses', size: '160x200', dimensions: '160×200×26 سم', price: 4600, image: 'assets/mattress2.jpeg' },
+    { id: 17, name: 'مرتبة سوست 100 سم', category: 'mattresses', size: '100x200', dimensions: '100×200×26 سم', price: 2900, image: 'assets/mattress2.jpeg' },
+    { id: 18, name: 'مرتبة سوست 120 سم', category: 'mattresses', size: '120x200', dimensions: '120×200×26 سم', price: 3300, image: 'assets/mattress2.jpeg' },
+    { id: 19, name: 'مرتبة سوست 150 سم', category: 'mattresses', size: '150x200', dimensions: '150×200×26 سم', price: 4150, image: 'assets/mattress2.jpeg' },
+    { id: 20, name: 'مرتبة سوست 160 سم', category: 'mattresses', size: '160x200', dimensions: '160×200×26 سم', price: 4600, image: 'assets/mattress2.jpeg' },
     // Wardrobes
-    { id: 9, name: 'دولاب خشب بإطار معدني', category: 'wardrobes', design: 'كلاسيك', dimensions: '40×60×180 سم', price: 4500, image: 'assets/wardrobe3.jpeg' },
-    { id: 10, name: 'دولاب ملابس خزانه وارفف', category: 'wardrobes', design: 'مودرن', dimensions: '100×40×180 سم', price: 4900, image: 'assets/wardrobe5.jpeg' },
-    { id: 11, name: 'دولاب 3 ضلفة بخزانات', category: 'wardrobes', design: 'فاخر', dimensions: '160×60×200 سم', price: 9000, image: 'assets/wardrobe2.jpeg' },
-    { id: 12, name: 'دريسينج متعدد الارفف', category: 'wardrobes', design: 'سوبر', dimensions: '190×50×200 سم', price: 8500, image: 'assets/wardrobe4.jpeg' },
+    { id: 21, name: 'دولاب خشب بإطار معدني', category: 'wardrobes', design: 'كلاسيك', dimensions: '40×60×180 سم', price: 4500, image: 'assets/wardrobe3.jpeg' },
+    { id: 22, name: 'دولاب ملابس خزانه وارفف', category: 'wardrobes', design: 'مودرن', dimensions: '100×40×180 سم', price: 4900, image: 'assets/wardrobe5.jpeg' },
+    { id: 23, name: 'دولاب 3 ضلفة بخزانات', category: 'wardrobes', design: 'فاخر', dimensions: '160×60×200 سم', price: 9000, image: 'assets/wardrobe2.jpeg' },
+    { id: 24, name: 'دريسينج متعدد الارفف', category: 'wardrobes', design: 'سوبر', dimensions: '190×50×200 سم', price: 8500, image: 'assets/wardrobe4.jpeg' },
     // Bedside Tables
-    { id: 13, name: 'كومود Z', category: 'bedside', design: 'كلاسيك', dimensions: '50×40×50 سم', price: 1600, image: 'assets/bedside1.jpeg' },
-    { id: 14, name: 'كومود 2 رف', category: 'bedside', design: 'مودرن', dimensions: '45×40×55 سم', price: 1600, image: 'assets/bedside2.jpeg' }
+    { id: 25, name: 'كومود Z', category: 'bedside', design: 'كلاسيك', dimensions: '50×40×50 سم', price: 1600, image: 'assets/bedside1.jpeg' },
+    { id: 26, name: 'كومود 2 رف', category: 'bedside', design: 'مودرن', dimensions: '45×40×55 سم', price: 1600, image: 'assets/bedside2.jpeg' },
+    { id: 27, name: 'كومود كروس', category: 'bedside', design: 'مودرن', dimensions: '40×40×50 سم', price: 1300, image: 'assets/bedsidecross.jpeg' },
+    { id: 28, name: 'كومود S', category: 'bedside', design: 'مودرن', dimensions: '40×45×45 سم', price: 1400, image: 'assets/bedsideS.jpeg' },
+    { id: 29, name: 'كومود روتانا', category: 'bedside', design: 'مودرن', dimensions: '35×35×50 سم', price: 1600, image: 'assets/bedsiderotana.jpeg' },
+    { id: 30, name: 'كومود لاينز', category: 'bedside', design: 'مودرن', dimensions: '40×40×40 سم', price: 1400, image: 'assets/bedsidelines.jpeg' },
+    { id: 31, name: 'كومود روفان', category: 'bedside', design: 'مودرن', dimensions: '45×45×50 سم', price: 1550, image: 'assets/bedsiderovan.jpeg' },
+    { id: 32, name: 'كومود سلايدز', category: 'bedside', design: 'مودرن', dimensions: '40×40×45 سم', price: 1500, image: 'assets/bedsideslides.jpeg' },
+    { id: 33, name: 'كومود جانبية 4 ارفف', category: 'bedside', design: 'مودرن', dimensions: '40×40×60 سم', price: 2500, image: 'assets/bedsidefour.jpeg' },
+    // Puffs
+    { id: 34, name: 'كرسي تسريحة معدني', category: 'puffs', design: 'مودرن', dimensions: '80×60×50 سم', price: 1800, image: 'assets/puff.jpeg' },
+    { id: 35, name: '3 كرسي بف', category: 'puffs', design: 'مودرن', dimensions: '40×40×50 سم', price: 3000, image: 'assets/puff3.jpeg' },
+    // Banquettes
+    { id: 36, name: 'بانكيت معدني + جزامة', category: 'banquettes', design: 'مودرن', dimensions: '120×45 سم', price: 3500, image: 'assets/banquette.jpeg' },
+    { id: 37, name: 'بانكيت معدني + جزامة', category: 'banquettes', design: 'مودرن', dimensions: '120×45 سم', price: 3500, image: 'assets/banquette2.jpeg' },
+    // Mirror
+    { id: 38, name: 'تسريحة معدنية مودرن + مراية + كرسي', category: 'mirror', design: 'مودرن', dimensions: '120×45×60 سم', price: 4800, image: 'assets/dresser.jpeg' },
+
 ];
 
 // ===================== CART STATE =====================
 let cart = JSON.parse(localStorage.getItem('marvelCart')) || [];
 let shippingCost = parseInt(localStorage.getItem('marvelShippingCost')) || 0;
+
+// ===================== COLOR OPTIONS =====================
+const metalColors = [
+    { value: '#000000', name: 'أسود' },
+    { value: '#FFFFFF', name: 'أبيض' },
+    { value: '#8D8D8D', name: 'رمادي' }
+];
+
+const fabricColors = [
+    { value: '#EDE4DA', name: 'بيج' },
+    { value: '#B9947D', name: 'كافيه' },
+    { value: '#8D8D8D', name: 'رمادي' },
+    { value: '#0138AA', name: 'أزرق' }
+];
+
+// ===================== COLOR SELECTION FUNCTION =====================
+function selectColor(cartIndex, type, colorValue, colorName, element) {
+    // Update cart item with selected color
+    if (type === 'metal') {
+        cart[cartIndex].metalColor = { value: colorValue, name: colorName };
+    } else if (type === 'fabric') {
+        cart[cartIndex].fabricColor = { value: colorValue, name: colorName };
+    }
+
+    // Save to localStorage
+    saveCart();
+
+    // Update UI - remove selected from siblings of same type only, add to clicked
+    const colorsRow = element.closest('.colors-row');
+    if (colorsRow) {
+        colorsRow.querySelectorAll('.color-circle').forEach(circle => {
+            circle.classList.remove('selected');
+        });
+        element.classList.add('selected');
+    }
+}
 
 // ===================== CART FUNCTIONS =====================
 function addToCart(productId) {
@@ -283,27 +346,82 @@ function renderCartPage() {
         if (cartEmpty) cartEmpty.classList.add('hidden');
         if (shippingSection) shippingSection.classList.remove('hidden');
 
-        cartItems.innerHTML = cart.map((item, index) => `
-            <div class="flex flex-col md:flex-row items-start md:items-center gap-4 bg-gray-50 rounded-xl p-4">
-                <div class="w-20 h-20 bg-gradient-to-br from-teal-100 to-turquoise-100 rounded-xl flex items-center justify-center">
-                    <span class="text-2xl">${getCategoryIcon(item.category)}</span>
+        cartItems.innerHTML = cart.map((item, index) => {
+            // Build metal color options HTML
+            const metalColorsHtml = metalColors.map(color => {
+                const isSelected = item.metalColor && item.metalColor.value === color.value ? 'selected' : '';
+                const borderStyle = color.value === '#FFFFFF' ? 'border: 2px solid #e0e0e0;' : '';
+                return `
+                    <div class="color-option">
+                        <div class="color-circle ${isSelected}" 
+                             style="background-color: ${color.value}; ${borderStyle}"
+                             onclick="selectColor(${index}, 'metal', '${color.value}', '${color.name}', this)"></div>
+                        <span class="color-label">${color.name}</span>
+                    </div>
+                `;
+            }).join('');
+
+            // Build fabric color options HTML
+            const fabricColorsHtml = fabricColors.map(color => {
+                const isSelected = item.fabricColor && item.fabricColor.value === color.value ? 'selected' : '';
+                return `
+                    <div class="color-option">
+                        <div class="color-circle ${isSelected}" 
+                             style="background-color: ${color.value};"
+                             onclick="selectColor(${index}, 'fabric', '${color.value}', '${color.name}', this)"></div>
+                        <span class="color-label">${color.name}</span>
+                    </div>
+                `;
+            }).join('');
+
+            return `
+            <div class="bg-gray-50 rounded-xl p-4">
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+                    <div class="w-20 h-20 bg-gradient-to-br from-teal-100 to-turquoise-100 rounded-xl flex items-center justify-center">
+                        <span class="text-2xl">${getCategoryIcon(item.category)}</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-gray-800">${item.name} - ${item.size || item.design}</h4>
+                        <p class="text-sm text-gray-500">${item.dimensions}</p>
+                        ${item.metalSlats ? '<span class="text-xs text-lime-600">+ شرائح معدنية</span>' : ''}
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="updateQuantity(${index}, -1)" class="w-8 h-8 rounded-lg bg-gray-200 hover:bg-gray-300 font-bold">-</button>
+                        <span class="w-8 text-center font-bold">${item.quantity}</span>
+                        <button onclick="updateQuantity(${index}, 1)" class="w-8 h-8 rounded-lg bg-gray-200 hover:bg-gray-300 font-bold">+</button>
+                    </div>
+                    <span class="font-bold text-teal-600 min-w-[100px] text-left">${(item.price * item.quantity).toLocaleString('ar-EG')} جنيه</span>
+                    <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 p-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                    </button>
                 </div>
-                <div class="flex-1">
-                    <h4 class="font-bold text-gray-800">${item.name} - ${item.size || item.design}</h4>
-                    <p class="text-sm text-gray-500">${item.dimensions}</p>
-                    ${item.metalSlats ? '<span class="text-xs text-lime-600">+ شرائح معدنية</span>' : ''}
+                
+                <!-- Color Selection Section -->
+                <div class="color-section">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Metal Frame Color -->
+                        <div>
+                            <div class="color-section-title">
+                                <span>🔩</span> لون الإطار المعدني:
+                            </div>
+                            <div class="colors-row">
+                                ${metalColorsHtml}
+                            </div>
+                        </div>
+                        <!-- Fabric Color -->
+                        <div>
+                            <div class="color-section-title">
+                                <span>🛋️</span> لون القماش:
+                            </div>
+                            <div class="colors-row">
+                                ${fabricColorsHtml}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex items-center gap-2">
-                    <button onclick="updateQuantity(${index}, -1)" class="w-8 h-8 rounded-lg bg-gray-200 hover:bg-gray-300 font-bold">-</button>
-                    <span class="w-8 text-center font-bold">${item.quantity}</span>
-                    <button onclick="updateQuantity(${index}, 1)" class="w-8 h-8 rounded-lg bg-gray-200 hover:bg-gray-300 font-bold">+</button>
-                </div>
-                <span class="font-bold text-teal-600 min-w-[100px] text-left">${(item.price * item.quantity).toLocaleString('ar-EG')} جنيه</span>
-                <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 p-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                </button>
             </div>
-        `).join('');
+        `;
+        }).join('');
 
         // Upselling
         if (upsellingSection) {
@@ -398,12 +516,26 @@ function renderCheckoutSummary() {
 
     const checkoutItems = document.getElementById('checkout-items');
     if (checkoutItems) {
-        checkoutItems.innerHTML = cart.map(item => `
-            <div class="flex justify-between">
-                <span>${item.name} ${item.size || item.design} x${item.quantity}</span>
-                <span>${(item.price * item.quantity).toLocaleString('ar-EG')} جنيه</span>
+        checkoutItems.innerHTML = cart.map(item => {
+            // Build color info string
+            let colorInfo = '';
+            if (item.metalColor) {
+                colorInfo += `<div class="text-xs text-gray-500 mt-1">• لون الإطار: ${item.metalColor.name}</div>`;
+            }
+            if (item.fabricColor) {
+                colorInfo += `<div class="text-xs text-gray-500">• لون القماش: ${item.fabricColor.name}</div>`;
+            }
+
+            return `
+            <div class="border-b border-purple-100 pb-2 mb-2 last:border-b-0 last:pb-0 last:mb-0">
+                <div class="flex justify-between">
+                    <span class="font-medium">${item.name} ${item.size || item.design} x${item.quantity}</span>
+                    <span class="font-bold">${(item.price * item.quantity).toLocaleString('ar-EG')} جنيه</span>
+                </div>
+                ${colorInfo}
             </div>
-        `).join('');
+        `;
+        }).join('');
     }
 
     const checkoutProductsTotal = document.getElementById('checkout-products-total');
@@ -475,6 +607,8 @@ function handleCheckoutSubmit(e) {
             message += `• المقاس/التصميم: ${item.size || item.design}\n`;
             message += `• الكمية: ${item.quantity}\n`;
             if (item.metalSlats) message += `• شرائح معدنية: نعم\n`;
+            if (item.metalColor) message += `• لون الإطار المعدني: ${item.metalColor.name}\n`;
+            if (item.fabricColor) message += `• لون القماش: ${item.fabricColor.name}\n`;
             message += `• السعر: ${(item.price * item.quantity).toLocaleString('ar-EG')} جنيه\n\n`;
         });
 
