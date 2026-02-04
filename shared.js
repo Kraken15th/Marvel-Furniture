@@ -11,13 +11,17 @@ const products = [
     { id: 7, name: 'مرتبة سوست 150 سم', category: 'mattresses', size: '150x200', dimensions: '150×200×26 سم', price: 4150, image: 'assets/mattress2.jpeg' },
     { id: 8, name: 'مرتبة سوست 160 سم', category: 'mattresses', size: '160x200', dimensions: '160×200×26 سم', price: 4600, image: 'assets/mattress2.jpeg' },
     // Wardrobes
-    { id: 9, name: 'دولاب خشب بإطار معدني', category: 'wardrobes', design: 'كلاسيك', dimensions: '40×60×180 سم', price: 4500, image: 'assets/wardrobe3.jpeg' },
+    { id: 9, name: 'دولاب خشب بإطار معدني', category: 'wardrobes', design: 'كلاسيك', dimensions: '190×70×50 سم', price: 6000, image: 'assets/wardrobe3.jpeg' },
     { id: 10, name: 'دولاب ملابس خزانه وارفف', category: 'wardrobes', design: 'مودرن', dimensions: '100×40×180 سم', price: 4900, image: 'assets/wardrobe5.jpeg' },
-    { id: 11, name: 'دولاب 3 ضلفة بخزانات', category: 'wardrobes', design: 'فاخر', dimensions: '160×60×200 سم', price: 9000, image: 'assets/wardrobe2.jpeg' },
+    { id: 11, name: 'دولاب 3 ضلفة بخزانات', category: 'wardrobes', design: 'فاخر', dimensions: '190×150×50 سم', price: 14500, image: 'assets/wardrobe2.jpeg' },
     { id: 12, name: 'دريسينج متعدد الارفف', category: 'wardrobes', design: 'سوبر', dimensions: '190×50×200 سم', price: 8500, image: 'assets/wardrobe4.jpeg' },
+    { id: 13, name: 'دريسينج متعدد الارفف 2', category: 'wardrobes', design: 'سوبر', dimensions: '180×110×48 سم', price: 5800, image: 'assets/wardrobe6.jpeg' },
+    { id: 14, name: 'دريسينج متعدد الارفف 3', category: 'wardrobes', design: 'سوبر', dimensions: '180×150×50 سم', price: 7500, image: 'assets/wardrobe7.jpeg' },
+    { id: 15, name: 'دريسينج متعدد الارفف 4', category: 'wardrobes', design: 'سوبر', dimensions: '180×120×50 سم', price: 7000, image: 'assets/wardrobe8.jpeg' },
+    { id: 16, name: 'دريسينج متعدد الارفف 5', category: 'wardrobes', design: 'سوبر', dimensions: '180×110×50 سم', price: 8000, image: 'assets/wardrobe9.jpeg' },
     // Bedside Tables
-    { id: 13, name: 'كومود Z', category: 'bedside', design: 'كلاسيك', dimensions: '50×40×50 سم', price: 1600, image: 'assets/bedside1.jpeg' },
-    { id: 14, name: 'كومود 2 رف', category: 'bedside', design: 'مودرن', dimensions: '45×40×55 سم', price: 1600, image: 'assets/bedside2.jpeg' }
+    { id: 17, name: 'كومود Z', category: 'bedside', design: 'كلاسيك', dimensions: '50×40×50 سم', price: 1600, image: 'assets/bedside1.jpeg' },
+    { id: 18, name: 'كومود 2 رف', category: 'bedside', design: 'مودرن', dimensions: '45×40×55 سم', price: 1600, image: 'assets/bedside2.jpeg' }
 ];
 
 // ===================== CART STATE =====================
