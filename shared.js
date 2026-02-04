@@ -15,10 +15,10 @@ const products = [
     { id: 10, name: 'دولاب ملابس خزانه وارفف', category: 'wardrobes', design: 'مودرن', dimensions: '100×40×180 سم', price: 4900, image: 'assets/wardrobe5.jpeg' },
     { id: 11, name: 'دولاب 3 ضلفة بخزانات', category: 'wardrobes', design: 'فاخر', dimensions: '190×150×50 سم', price: 14500, image: 'assets/wardrobe2.jpeg' },
     { id: 12, name: 'دريسينج متعدد الارفف', category: 'wardrobes', design: 'سوبر', dimensions: '190×50×200 سم', price: 8500, image: 'assets/wardrobe4.jpeg' },
-    { id: 13, name: 'دريسينج متعدد الارفف 2', category: 'wardrobes', design: 'سوبر', dimensions: '180×110×48 سم', price: 5800, image: 'assets/wardrobe6.jpeg' },
-    { id: 14, name: 'دريسينج متعدد الارفف 3', category: 'wardrobes', design: 'سوبر', dimensions: '180×150×50 سم', price: 7500, image: 'assets/wardrobe7.jpeg' },
-    { id: 15, name: 'دريسينج متعدد الارفف 4', category: 'wardrobes', design: 'سوبر', dimensions: '180×120×50 سم', price: 7000, image: 'assets/wardrobe8.jpeg' },
-    { id: 16, name: 'دريسينج متعدد الارفف 5', category: 'wardrobes', design: 'سوبر', dimensions: '180×110×50 سم', price: 8000, image: 'assets/wardrobe9.jpeg' },
+    { id: 13, name: 'دريسينج متعدد الارفف 110 سم', category: 'wardrobes', design: 'سوبر', dimensions: '180×110×48 سم', price: 5800, image: 'assets/wardrobe6.jpeg' },
+    { id: 14, name: 'دريسينج متعدد الارفف 150 سم', category: 'wardrobes', design: 'سوبر', dimensions: '180×150×50 سم', price: 7500, image: 'assets/wardrobe7.jpeg' },
+    { id: 15, name: 'دريسينج متعدد الارفف 120 سم', category: 'wardrobes', design: 'سوبر', dimensions: '180×120×50 سم', price: 7000, image: 'assets/wardrobe8.jpeg' },
+    { id: 16, name: 'دولاب برفوف جانبية', category: 'wardrobes', design: 'سوبر', dimensions: '180×110×50 سم', price: 8000, image: 'assets/wardrobe9.jpeg' },
     // Bedside Tables
     { id: 17, name: 'كومود Z', category: 'bedside', design: 'كلاسيك', dimensions: '50×40×50 سم', price: 1600, image: 'assets/bedside1.jpeg' },
     { id: 18, name: 'كومود 2 رف', category: 'bedside', design: 'مودرن', dimensions: '45×40×55 سم', price: 1600, image: 'assets/bedside2.jpeg' }
